@@ -11,7 +11,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')))
 
 app.use('api', getRoutes())
 
-app.use.apply.get('*', function(req, res) {
+app.get('*', function(req, res) {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 })
 
