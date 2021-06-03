@@ -1,3 +1,6 @@
+import ProductList from "components/ProductList";
+import React from "react";
+
 const Home = () => (
   <section className="text-gray-400 bg-gray-900 body-font">
     <div className="container px-5 py-24 mx-auto">
@@ -13,7 +16,9 @@ const Home = () => (
           <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex" />
         </div>
       </div>
-      <div className="flex flex-wrap -m-4">Products</div>
+      <div className="flex flex-wrap -m-4">
+        <ProductList />
+      </div>
     </div>
   </section>
 );

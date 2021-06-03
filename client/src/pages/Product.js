@@ -1,3 +1,5 @@
+import React from "react";
+
 const Product = () => (
   <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
     <div className="container px-5 py-24 mx-auto">

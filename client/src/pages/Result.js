@@ -1,3 +1,5 @@
+import React from "react";
+
 const Result = () => (
   <section className="text-gray-400 bg-gray-900 body-font">
     <div className="container px-5 py-24 mx-auto">
