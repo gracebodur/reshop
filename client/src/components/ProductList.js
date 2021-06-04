@@ -1,19 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom'
+import { useQuery } from 'react-query'
 
 const ProductList = () => {
-  const [products, setProducts] = React.useState([]);
-
-  React.useEffect(() => {
-    axios
-      .get("/api/products")
-      .then((res) => res.data.products)
-      .then((products) => setProducts(products));
-  }, []);
+ const { data: products } = useQuery('Products', () => axios('/api/products').then((res) => res.data.products))
 
   return products.map((product) => (
-    // @ts-ignore
     <ProductItem key={product.id} product={product} />
   ));
 };
