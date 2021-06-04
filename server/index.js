@@ -9,12 +9,13 @@ app.use(express.json())
 // Serve the built version of our React app
 app.use(express.static(path.resolve(__dirname, '../client/build')))
 
-app.use('api', getRoutes())
+app.use('/api', getRoutes())
 
-app.get('*', function(req, res) {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
+// All routes that don't match api will be caught by this route (routed through our React app)
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 })
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
+  console.log(`Listening on port ${PORT}`)
 })
