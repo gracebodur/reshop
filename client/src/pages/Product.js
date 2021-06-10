@@ -1,6 +1,10 @@
 import React from "react";
+import { useParams } from "react-router";
 
-const Product = () => (
+const Product = () => {
+  const { productId } = useParams()
+
+  return (
   <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
     <div className="container px-5 py-24 mx-auto">
       <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -27,6 +31,6 @@ const Product = () => (
       </div>
     </div>
   </section>
-);
+  )};
 
 export default Product;
