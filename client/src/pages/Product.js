@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "components/LoadingSpinner";
 import formatProductPrice from "utils/formatProductPrice";
+import AddToCart from "components/AddToCart";
 
 const Product = () => {
   const { productId } = useParams();
@@ -51,6 +52,7 @@ const Product = () => {
               <span className="title-font font-medium text-2xl text-white">
                {price}
               </span>
+              <AddToCart />
             </div>
           </div>
         </div>
