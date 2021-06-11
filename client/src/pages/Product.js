@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import LoadingSpinner from "components/LoadingSpinner";
 import formatProductPrice from "utils/formatProductPrice";
 import AddToCart from "components/AddToCart";
+import RemoveFromCart from "components/RemoveFromCart";
 
 const Product = () => {
   const { productId } = useParams();
@@ -53,6 +54,7 @@ const Product = () => {
                {price}
               </span>
               <AddToCart />
+              <RemoveFromCart />
             </div>
           </div>
         </div>
