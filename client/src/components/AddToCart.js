@@ -5,7 +5,7 @@ import { useShoppingCart } from "use-shopping-cart";
 const AddToCart = ({ product }) => {
   const { addItem } = useShoppingCart()
 
-  const handleAddItem =() => {
+  function handleAddItem() {
     addItem(product)
     toast.success(`${product.name} is added to your cart!`)
   }
