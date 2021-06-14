@@ -5,12 +5,12 @@ import Home from "pages/Home";
 import Product from "pages/Product";
 import Result from "pages/Result";
 import { loadStripe } from "@stripe/stripe-js";
-import "./App.css";
 import { CartProvider } from "use-shopping-cart";
 
-const queryClient = new QueryClient();
+import "./App.css";
 
-const stripePromise= loadStripe('process.env.REACT_APP_PK_TEST')
+const queryClient = new QueryClient();
+const stripePromise = loadStripe('pk_test_51GqhEvBGImU03UKDK9jVTj2ZvyQzHtY2FYbsZ0d0CP2mSnyxCCjDn3uhW0uGSwf8YE7OTnTCdc3ZPChOsnbSYHjs00pphQWve8')
 
 const App = () => {
   return (
