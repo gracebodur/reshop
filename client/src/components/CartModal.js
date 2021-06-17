@@ -6,7 +6,7 @@ import { useShoppingCart } from "use-shopping-cart";
 Modal.setAppElement("#root");
 
 const CartModal = ({ isOpen, toggleModal }) => {
-  const { cartCount, formattedTotalPrice } = useShoppingCart();
+  const { cartCount, formattedTotalPrice, cartDetails} = useShoppingCart();
 
   return (
     <Modal
