@@ -1,6 +1,7 @@
 import React from 'react'
 import { LogoIcon } from "./Icons";
 import { Link } from 'react-router-dom';
+import CartSummary from './CartSummary';
 
 const Navbar = () => {
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
             </span>
           </span>
         </Link>
+        <CartSummary />
       </div>
     </header>
   );
