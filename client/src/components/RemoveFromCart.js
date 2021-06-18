@@ -6,7 +6,7 @@ const RemoveFromCart = ({ product }) => {
   const { removeItem, cartCount } = useShoppingCart();
 
   function handleRemoveItem() {
-    removeItem(product.sku);
+    removeItem(product.id);
     toast.success(`${product.name} is removed from your cart!`);
   }
 

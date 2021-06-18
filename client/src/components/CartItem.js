@@ -1,7 +1,14 @@
 import React from "react";
+import { useShoppingCart } from "use-shopping-cart";
 import formatProductPrice from "utils/formatProductPrice";
 
 const CartItem = ({ cartItem }) => {
+  const { setItemQuantity } = useShoppingCart()
+
+  function handleSetItemQuantity(event) {
+    setItemQuantity(cartItem.id, event.target.value)
+  }
+
   return (
     <div className="flex w-full">
       <div className="flex items-center px-4 py-3 hover:bg-gray-100 -mx-4 w-full justify-between">
@@ -22,6 +29,7 @@ const CartItem = ({ cartItem }) => {
             className="border-solid border-2"
             type="number"
             value={cartItem.quantity}
+            onChange={handleSetItemQuantity}
             min={0}
           />
         </div>
