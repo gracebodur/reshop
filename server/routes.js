@@ -8,6 +8,8 @@ module.exports = function getRoutes() {
   router.get("/products", getProducts);
   router.get("/products/:productId", getProduct);
 
+  router.post("/checkout-sessions", createCheckoutSession);
+
   return router;
 };
 
@@ -25,3 +27,4 @@ const getProduct = (req, res) => {
     return res.status(404).json({ statusCode: 404, message: error.message });
   }
 };
+
