@@ -27,7 +27,7 @@ const CartModal = ({ isOpen, toggleModal }) => {
             </div>
             <hr />
             {cartItems.map(cartItem => (
-              <CartItem key={cartItem.i} cartItem={cartItem}/>
+              <CartItem key={cartItem.id} cartItem={cartItem}/>
             ))}
             <div className="ml-auto mt-4">
               <button
