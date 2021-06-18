@@ -8,7 +8,7 @@ Modal.setAppElement("#root");
 const CartModal = ({ isOpen, toggleModal }) => {
   const { cartCount, formattedTotalPrice, cartDetails } = useShoppingCart();
 
-  const cartItems = Object.keys(cartDetails).map((key) => cartDetails[key]);
+  const cartItems = Object.keys(cartDetails).map(key => cartDetails[key]);
 
   return (
     <Modal
