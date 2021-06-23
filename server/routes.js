@@ -1,4 +1,4 @@
-require('dotenv').config({path: __dirname + '/.env'})
+require("dotenv").config({ path: __dirname + "/.env" });
 const express = require("express");
 const products = require("./products.json");
 const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
@@ -53,7 +53,7 @@ async function createCheckoutSession(req, res) {
       cancel_url: origin,
       mode: "payment",
     };
-    
+
     const checkoutSession = await stripe.checkout.sessions.create(params);
 
     res.status(200).json(checkoutSession);
@@ -63,17 +63,17 @@ async function createCheckoutSession(req, res) {
 }
 
 async function getCheckoutSession(req, res) {
-  const {sessionId } = req.params
+  const { sessionId } = req.params;
   try {
-    if (!sessionId.startsWith('cs_')) {
-      throw Error('Incorrect checkout session id')
+    if (!sessionId.startsWith("cs_")) {
+      throw Error("Incorrect checkout session id");
     }
-   const checkout_session = await stripe.checkout.sessions.retrieve(
+    const checkout_session = await stripe.checkout.sessions.retrieve(
       sessionId,
-      { expand: ['payment_intent']}
-    )
-    res.status(200).json(checkout_session)
+      { expand: ["payment_intent"] }
+    );
+    res.status(200).json(checkout_session);
   } catch (error) {
-    res.status(500).json({statusCode: 500, message: error.message})
+    res.status(500).json({ statusCode: 500, message: error.message });
   }
 }
