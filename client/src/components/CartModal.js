@@ -1,12 +1,14 @@
 import React from "react";
 import Modal from "react-modal";
 import { useShoppingCart } from "use-shopping-cart";
+import useCheckout from "utils/useCheckout";
 import CartItem from "./CartItem";
 
 Modal.setAppElement("#root");
 
 const CartModal = ({ isOpen, toggleModal }) => {
   const { cartCount, formattedTotalPrice, cartDetails } = useShoppingCart();
+  const handleCheckout  = useCheckout()
 
   const cartItems = Object.keys(cartDetails).map(key => cartDetails[key]);
 
@@ -33,6 +35,7 @@ const CartModal = ({ isOpen, toggleModal }) => {
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 style={{ marginRight: 4 }}
+                onClick={handleCheckout}
               >
                 Checkout Now
               </button>

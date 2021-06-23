@@ -1,4 +1,4 @@
-//require('dotenv').config()
+require('dotenv').config({path: __dirname + '/.env'})
 const express = require("express");
 const products = require("./products.json");
 const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
@@ -33,10 +33,10 @@ const getProduct = (req, res) => {
 async function createCheckoutSession(req, res) {
   try {
     const cartItems = req.body;
-    const line_items = validateCartItems(product, cartItems);
+    const line_items = validateCartItems(products, cartItems);
 
     const origin =
-      prcess.env.NODE_ENV === "production"
+      process.env.NODE_ENV === "production"
         ? req.headers.origin
         : "http://localhost:3000";
 
@@ -52,6 +52,7 @@ async function createCheckoutSession(req, res) {
       cancel_url: origin,
       mode: "payment",
     };
+    
     const checkoutSession = await stripe.checkout.sessions.create(params);
 
     res.status(200).json(checkoutSession);
