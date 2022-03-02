@@ -44,7 +44,7 @@
     "ssri": "^6.0.2",
     "stripe": "^8.151.0",
     "tar": "^6.1.8",
-    "url-parse": "^1.5.3",
+    "url-parse": "^1.5.9",
     "use-shopping-cart": "^2.4.3",
     "ws": "^7.5.3"
   }
